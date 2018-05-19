@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import '../../App.css'
 
+import '../../App.css';
+import "../../style/header/index.css";
 
 import NavbarIthem from './navbar/NavbarItem';
 
@@ -8,11 +9,11 @@ class Header extends Component  {
 
     constructor(props) {
         super(props);
-        this.titles = ['o mnie', 'pokaż swój projekt', 'ściągi', 'kontakt'];
+        this.menu = ['o mnie', 'pokaż swój projekt', 'ściągi', 'kontakt'];
     }
 
     render() {
-        const listItems = this.titles.map((title, index) =>
+        const listItems = this.menu.map((title, index) =>
             <NavbarIthem key={index}>{title}</NavbarIthem>
         );
 

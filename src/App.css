@@ -3,7 +3,7 @@
 /*$font-size-base: 0.9rem;*/
 /*$line-height-base: 1.6;*/
 /*$font-silver-color: #C0C0C0;*/
-@import "style/header/index.css";
+
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 #particles canvas {
   position: absolute;

@@ -12,7 +12,8 @@ class App extends Component {
           messageText: 'bartosz wojtal.developer.make/awsome',
           left: -1000,
           hover: false,
-          visibleBtn: false
+          visibleBtn: false,
+          visibleApp: true
       };
   }
 
@@ -34,12 +35,16 @@ class App extends Component {
   }
 
   lightMessageHandler = () => {
-        this.setState({hover: true})
-  }
+      this.setState({ hover: true })
+  };
 
   lightOffMessageHandler = () => {
-        this.setState({hover: false})
-  }
+      this.setState({ hover: false })
+  };
+
+  changeView = () => {
+      this.state.visibleApp ?  this.setState({ visibleApp: false }) : this.setState({ visibleApp: true })
+  };
 
 
 
@@ -47,18 +52,17 @@ class App extends Component {
     const leftPosition = this.state.left;
 
     return (
-      <div className="App">
+      <div className="App" style={this.state.visibleApp ? {display: "block"} : {display: "none"}}>
           <div id={"particles"}>
               <Particles> </Particles>
           </div>
-
-
           <Header />
+
           <div id="message-container">
               <div className="welcome-container">
                   <h3 style={{left: leftPosition, position: "relative"}} className={this.state.hover ? "js-show-text-hover" : "js-show-text"} id="msg">{this.state.messageText}</h3>
               </div>
-              <Button  onMouseEnter={this.lightMessageHandler} onMouseLeave={this.lightOffMessageHandler} style={this.state.visibleBtn ? {display: "block"} : {display: "none"}} >zapraszam</Button>
+              <Button changeView={this.changeView} onMouseEnter={this.lightMessageHandler} onMouseLeave={this.lightOffMessageHandler} style={this.state.visibleBtn ? {display: "block"} : {display: "none"}} >zapraszam</Button>
           </div>
       </div>
     );
