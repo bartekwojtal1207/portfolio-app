@@ -1,0 +1,96 @@
+/*$font-family-sans-serif: "Helvetica Neue","Helvetica","Arial",sans-serif;*/
+/*$font-family-space: 'Space Mono', monospace;*/
+/*$font-size-base: 0.9rem;*/
+/*$line-height-base: 1.6;*/
+/*$font-silver-color: #C0C0C0;*/
+@import "style/header/index.css";
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+#message-container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+    min-height: 120px;
+}
+
+.welcome-button {
+    display: none;
+    width: 162px;
+    font-size: 20px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    padding: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    position: relative;
+    color: #C0C0C0;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+.welcome-button:before {
+     content: '';
+     display: block;
+     width: 0;
+     height: 86%;
+     position: absolute;
+     top: 7%;
+     left: 0;
+     opacity: 0;
+     background: white;
+     box-shadow: 0 0 15px 3px white;
+     -webkit-transform: skewX(-20deg);
+     -moz-transform: skewX(-20deg);
+     -ms-transform: skewX(-20deg);
+     -o-transform: skewX(-20deg);
+     transform: skewX(-20deg);
+ }
+.welcome-button:active {
+     box-shadow: 0 0 0 0 transparent;
+     -webkit-transition: box-shadow 0.2s ease-in;
+     -moz-transition: box-shadow 0.2s ease-in;
+     transition: box-shadow 0.2s ease-in;
+ }
+.welcome-button:hover {
+     color: white;
+     box-shadow: 0 0 30px 0 #C0C0C0;
+     background-color: #FAFAFA;
+     -webkit-transition: all 0.2s ease-out;
+     -moz-transition: all 0.2s ease-out;
+     transition: all 0.2s ease-out;
+}
+h3 {
+    font-size: 5vw;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+.js-show-text-hover {
+    color: #FAFAFA;
+    text-shadow: 1px 0px 5px #FAFAFA;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+
+

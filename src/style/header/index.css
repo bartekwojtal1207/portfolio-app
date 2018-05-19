@@ -1,0 +1,23 @@
+.navbar-list {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    font-family: 'Raleway', sans-serif;
+}
+.navbar-list li {
+    width: 15%;
+    list-style: none;
+    padding: 20px;
+}
+
+.navbar-list li:hover {
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+.navbar-list li a {
+    text-decoration: none;
+    color: #00dcff;
+}
