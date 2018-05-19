@@ -5,6 +5,12 @@
 /*$font-silver-color: #C0C0C0;*/
 @import "style/header/index.css";
 @import url('https://fonts.googleapis.com/css?family=Raleway');
+#particles canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 
 #message-container {
     height: 80vh;
@@ -18,6 +24,7 @@
     justify-content: center;
     font-family: 'Raleway', sans-serif;
     min-height: 120px;
+    z-index: 20;
 }
 
 .welcome-button {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Button from './partials/Button';
 import Header from './partials/header/Header';
+import Particles from 'react-particles-js';
 
 class App extends Component {
   constructor(props) {
@@ -47,6 +48,11 @@ class App extends Component {
 
     return (
       <div className="App">
+          <div id={"particles"}>
+              <Particles> </Particles>
+          </div>
+
+
           <Header />
           <div id="message-container">
               <div className="welcome-container">
