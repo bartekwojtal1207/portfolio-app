@@ -13,7 +13,8 @@ class App extends Component {
           left: -1000,
           hover: false,
           visibleBtn: false,
-          visibleApp: true
+          visibleApp: true,
+          visibleNavBar: false
       };
   }
 
@@ -27,6 +28,11 @@ class App extends Component {
   showBtn() {
       const doesShow = this.state.visibleBtn;
       this.setState({ visibleBtn: !doesShow })
+  }
+
+  showNavBar() {
+      const test = this.state.visibleNavBar;
+      this.setState({ visibleNavBar: !test })
   }
 
   setPositionText() {
@@ -44,20 +50,28 @@ class App extends Component {
       this.setState({ hover: false })
   };
 
-  changeView = () => {
-      // this.state.visibleApp ?  this.setState({ visibleApp: false }) : this.setState({ visibleApp: true })
-    console.log('changeView');
-  };
+  // changeView = () => {
+  //     const doesShow = this.state.visibleNavBar;
+  //     this.setState({ visibleNavBar: !doesShow })
+  // };
 
 
 
   render() {
     const leftPosition = this.state.left;
-    let button = null;
+    let button = null,
+        header = null;
+
 
     if( this.state.visibleBtn) {
         button = (
-            <Button changeView={this.changeView} onMouseEnter={this.lightMessageHandler} onMouseLeave={this.lightOffMessageHandler} style={this.state.visibleBtn ? {display: "block"} : {display: "none"}} >zapraszam</Button>
+            <Button click={() => this.showNavBar()} onMouseEnter={this.lightMessageHandler} onMouseLeave={this.lightOffMessageHandler} style={this.state.visibleBtn ? {display: "block"} : {display: "none"}} >zapraszam</Button>
+        )
+    }
+
+    if (this.state.visibleNavBar) {
+        header = (
+            <Header />
         )
     }
 
@@ -66,7 +80,10 @@ class App extends Component {
           {/*<div id={"particles"}>*/}
               {/*<Particles> </Particles>*/}
           {/*</div>*/}
-          <Header />
+          <header>
+              {/*<Header visibleNavBar={this.state.visibleNavBar} />*/}
+              {header}
+           </header>
 
           <div id="message-container">
               <div className="welcome-container">

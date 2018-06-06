@@ -12,7 +12,6 @@ class Header extends Component  {
     }
 
     state = {
-
         cattegory:
             [
                 {title: 'o mnie', visibleSubCategory: 'none'},
@@ -31,19 +30,25 @@ class Header extends Component  {
         );
 
         cattegory[index].visibleSubCategory = 'block';
-
         this.setState({ cattegory: cattegory })
     }
 
     render() {
         const listItems = this.state.cattegory.map((cattegory, index) =>
-            <NavbarIthem key={index} click={() => this.showSubCattegory(index)} visibleSubCategory={cattegory.visibleSubCategory}>{cattegory.title}</NavbarIthem>
+            <NavbarIthem
+                key={index}
+                click={() => this.showSubCattegory(index)}
+                visibleSubCategory={cattegory.visibleSubCategory}>{cattegory.title}
+            </NavbarIthem>
         );
 
         return (
-            <ul className={'navbar-list'}>
-                {listItems}
-            </ul>
+            <div>
+                <ul className={'navbar-list'}>
+                    {listItems}
+                </ul>
+            </div>
+
         )
 
     }
