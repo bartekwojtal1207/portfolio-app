@@ -21,15 +21,9 @@ class App extends Component {
   componentDidMount() {
       this.timerID = setInterval(() => this.setPositionText(),
           10);
-      this.timerID = setInterval(() => this.showBtn(),
-          11300);
-  }
 
-  showBtn() {
-      const doesShow = this.state.visibleBtn;
-      this.setState({ visibleBtn: !doesShow })
   }
-
+  
   showNavBar() {
       const test = this.state.visibleNavBar;
       this.setState({ visibleNavBar: !test })
@@ -40,6 +34,7 @@ class App extends Component {
       let left = this.state.left;
       left ++;
       this.state.left < 0 ? this.setState({ left: left }) : false;
+      this.state.left === 0 ? this.setState({ visibleBtn: true }) : this.setState({ visibleBtn: false })
   }
 
   lightMessageHandler = () => {
@@ -50,18 +45,11 @@ class App extends Component {
       this.setState({ hover: false })
   };
 
-  // changeView = () => {
-  //     const doesShow = this.state.visibleNavBar;
-  //     this.setState({ visibleNavBar: !doesShow })
-  // };
-
-
-
   render() {
     const leftPosition = this.state.left;
+
     let button = null,
         header = null;
-
 
     if( this.state.visibleBtn) {
         button = (
@@ -81,7 +69,6 @@ class App extends Component {
               {/*<Particles> </Particles>*/}
           {/*</div>*/}
           <header>
-              {/*<Header visibleNavBar={this.state.visibleNavBar} />*/}
               {header}
            </header>
 
