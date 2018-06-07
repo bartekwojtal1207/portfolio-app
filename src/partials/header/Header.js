@@ -14,29 +14,34 @@ class Header extends Component  {
     state = {
         cattegory:
             [
-                {title: 'o mnie', visibleSubCategory: 'none'},
-                {title: 'pokaż swój projekt', visibleSubCategory: 'none'},
-                {title: 'ściągi', visibleSubCategory: 'none'},
-                {title: 'kontakt', visibleSubCategory: 'none'}
+                {id: 1, title: 'o mnie', visibleSubCategory: 'none'},
+                {id: 2, title: 'pokaż swój projekt', visibleSubCategory: 'none'},
+                {id: 3, title: 'ściągi', visibleSubCategory: 'none'},
+                {id: 4, title: 'kontakt', visibleSubCategory: 'none'}
             ]
     };
 
     showSubCattegory(index) {
         // @TODO dziala niezle przerobic na efekt po najechaniu mysza a nie po kliku ! :-)
+        // show & hidden subcategory
         const cattegory = this.state.cattegory;
+        // @TODO przerobic na kopie obiektu !!!!!!! odc 57 !! @WAZNE
+        if (cattegory[index].visibleSubCategory === 'block') {
+            cattegory[index].visibleSubCategory = 'none';
+        }else {
+            cattegory.map((element, index) =>
+                element.visibleSubCategory = 'none'
+            );
+            cattegory[index].visibleSubCategory = 'block';
+        }
 
-        cattegory.map((element, index) =>
-            element.visibleSubCategory = 'none'
-        );
-
-        cattegory[index].visibleSubCategory = 'block';
         this.setState({ cattegory: cattegory })
     }
 
     render() {
         const listItems = this.state.cattegory.map((cattegory, index) =>
             <NavbarIthem
-                key={index}
+                key={cattegory.id}
                 click={() => this.showSubCattegory(index)}
                 visibleSubCategory={cattegory.visibleSubCategory}>{cattegory.title}
             </NavbarIthem>
