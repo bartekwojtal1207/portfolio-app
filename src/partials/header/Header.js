@@ -16,7 +16,7 @@ class Header extends Component  {
             [
                 {id: 1, title: 'o mnie', visibleSubCategory: 'none'},
                 {id: 2, title: 'pokaż swój projekt', visibleSubCategory: 'none'},
-                {id: 3, title: 'ściągi', visibleSubCategory: 'none'},
+                {id: 3, title: 'ściągoo', visibleSubCategory: 'none'},
                 {id: 4, title: 'kontakt', visibleSubCategory: 'none'}
             ]
     };

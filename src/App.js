@@ -46,7 +46,14 @@ class App extends Component {
   };
 
   render() {
-    const leftPosition = this.state.left;
+    const leftPosition = this.state.left,
+        classes = [];
+
+    if (this.state.hover) {
+        classes.push('js-show-text-hover')
+    }else {
+        classes.push('js-show-text')
+    }
 
     let button = null,
         header = null;
@@ -74,7 +81,7 @@ class App extends Component {
 
           <div id="message-container">
               <div className="welcome-container">
-                  <h3 style={{left: leftPosition, position: "relative"}} className={this.state.hover ? "js-show-text-hover" : "js-show-text"} id="msg">{this.state.messageText}</h3>
+                  <h3 style={{left: leftPosition, position: "relative"}} className={classes} id="msg">{this.state.messageText}</h3>
               </div>
               {button}
           </div>
