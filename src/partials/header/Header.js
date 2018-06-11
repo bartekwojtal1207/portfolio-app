@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Radium, { StyleRoot } from 'radium';
 
 import '../../App.css';
 import "../../style/header/index.css";
@@ -48,12 +49,13 @@ class Header extends Component  {
         );
 
         return (
-            <div>
-                <ul className={'navbar-list'}>
-                    {listItems}
-                </ul>
-            </div>
-
+            <StyleRoot>
+                <div>
+                    <ul className={'navbar-list'}>
+                        {listItems}
+                    </ul>
+                </div>
+            </StyleRoot>
         )
 
     }

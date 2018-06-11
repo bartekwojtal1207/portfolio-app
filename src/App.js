@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Radium, { StyleRoot }from 'radium';
 import Button from './partials/Button';
 import Header from './partials/header/Header';
 import Particles from 'react-particles-js';
@@ -71,23 +72,25 @@ class App extends Component {
     }
 
     return (
-      <div className="App" style={this.state.visibleApp ? {display: "block"} : {display: "none"}}>
-          {/*<div id={"particles"}>*/}
-              {/*<Particles> </Particles>*/}
-          {/*</div>*/}
-          <header>
-              {header}
-           </header>
+        <StyleRoot>
+          <div className="App" style={this.state.visibleApp ? {display: "block"} : {display: "none"}}>
+              {/*<div id={"particles"}>*/}
+                  {/*<Particles> </Particles>*/}
+              {/*</div>*/}
+              <header>
+                  {header}
+               </header>
 
-          <div id="message-container">
-              <div className="welcome-container">
-                  <h3 style={{left: leftPosition, position: "relative"}} className={classes} id="msg">{this.state.messageText}</h3>
+              <div id="message-container">
+                  <div className="welcome-container">
+                      <h3 style={{left: leftPosition, position: "relative"}} className={classes} id="msg">{this.state.messageText}</h3>
+                  </div>
+                  {button}
               </div>
-              {button}
           </div>
-      </div>
+        </StyleRoot>
     );
   }
 }
 
-export default App;
+export default Radium(App);
