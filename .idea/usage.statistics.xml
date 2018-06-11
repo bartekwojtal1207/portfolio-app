@@ -7,7 +7,7 @@
           <entry key="css" value="6" />
           <entry key="js" value="206" />
           <entry key="txt" value="36" />
-          <entry key="xml" value="2" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -15,12 +15,13 @@
           <entry key="CSS" value="6" />
           <entry key="JavaScript" value="206" />
           <entry key="PLAIN_TEXT" value="36" />
-          <entry key="XML" value="2" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
+          <entry key="gitignore" value="2" />
           <entry key="js" value="1" />
           <entry key="xml" value="1" />
         </counts>
@@ -29,6 +30,7 @@
         <counts>
           <entry key="CSS" value="2" />
           <entry key="JavaScript" value="1" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
